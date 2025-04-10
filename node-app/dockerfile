@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /user/src/app
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+COPY ./package* ./
+
+RUN npm install
+
+COPY . .
+RUN echo "🔗 DATABASE_URL is: $DATABASE_URL"
+RUN npx prisma db push
+RUN npx prisma generate
+RUN npm run build
+
+EXPOSE 9000
+
+CMD [ "npm","start"]

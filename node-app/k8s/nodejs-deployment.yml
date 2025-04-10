@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: <Image>
+        image: nodejs-app:latest
         ports:
         - containerPort: 9000
         env:
