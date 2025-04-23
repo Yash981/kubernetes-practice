@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yashwanth14/backend-pg:2
+        image: yashwanth14/backend-pg:3
         ports:
         - containerPort: 3000
 ---
